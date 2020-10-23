@@ -1,0 +1,5 @@
+                    //³µÅÆºÅÈ¥ÖØ
+                    foreach (var item in importInputs.GroupBy(s => new { s.PlateNo }))
+                    {
+                        Helpers.Assert.True(item.Count() == 1, string.Format(Configurations.OneSportsValidateMessageTemplates.ErrorAsImportRowPlateNoRepeat, item.Select(s => s.Row).FirstOrDefault().ToString(), item.Key.PlateNo));
+                    }
